@@ -907,7 +907,7 @@ PP(GRECT *prc;)
 	register int16_t sminus1, dminus1;
 
 	if (w_walkflag)
-#ifdef __ALCYON_
+#ifdef __ALCYON__
 		return;
 #else
 		return FALSE;

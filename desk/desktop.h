@@ -392,8 +392,6 @@ VOID win_view PROTO((int16_t vtype, int16_t isort));
 /*
  * deskact.c
  */
-extern BOOLEAN back_update;						/* update background */
-
 BOOLEAN ch_obj PROTO((int16_t mx, int16_t my, DESKWIN **win, int16_t *item, int16_t *type));
 BOOLEAN ch_undo PROTO((NOTHING));
 VOID file_op PROTO((const char *dest, int16_t mode));

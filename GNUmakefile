@@ -42,6 +42,17 @@ check::
 	for i in $(SUBDIRS); do $(MAKE) --no-print-directory -C $$i $(FLAGSTOPASS) all; done
 	for i in $(SUBDIRS); do $(MAKE) --no-print-directory -C $$i $(FLAGSTOPASS) $@; done
 
+checkall:
+	for version in 104 106 162; do \
+		for lang in us de fr es it se sf sg nl; do \
+			$(MAKE) clean; \
+			$(MAKE) TOSVERSION=$${version} COUNTRY=$${lang} || exit 1; \
+			$(MAKE) -C glue TOSVERSION=$${version} COUNTRY=$${lang} check || exit 1; \
+			cnm glue/tos.img | sort | uniq > glue/tos$${version}$${lang}.map; \
+		done; \
+	done
+	$(MAKE) clean
+
 maps:
 	for version in 104 106 162; do \
 		for lang in us de fr es it se sf sg nl; do \
