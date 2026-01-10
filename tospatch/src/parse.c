@@ -983,7 +983,7 @@ static void handle_date(char **batchptr)
 	}
 	country = get_term(batchptr);
 	ptr2 = (uint16_t *)(tos_buffer + 28);
-	if ((((signed char)(be16_to_cpu(*ptr2) & 0xff)) >> 1) != country)
+	if ((((be16_to_cpu(*ptr2) & 0xff)) >> 1) != (country & 0x7f))
 	{
 		error_handler(ERR_QUEST|ERR_CONTINUE, wrong_country_err);
 	}

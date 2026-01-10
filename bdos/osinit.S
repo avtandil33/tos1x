@@ -329,10 +329,10 @@ entusr:
 _gouser:
 #endif
     move.l  _run,a5
-    move.l  d0,$68(a5)
+    move.l  d0,$68(a5)  /* run->p_dreg[0] */
     move.l  $7c(a5),a6  /* stack pointer (maybe usp, maybe ssp) */
     move.l  (a6)+,a4    /* other stack pointer */
-    move.w  (a6)+,d0
+    move.w  (a6)+,d0	/* startup status reg */
     move.l  (a6)+,a3    /* retadd */
     movem.l (a6)+,d1-d7/a0-a2
     btst    #13,d0
@@ -360,7 +360,7 @@ retsys: move.l  a6,sp
 #if (GEMDOS >= 0x17) | (TOSVERSION >= 0x106)
 _gouser:
     movea.l  _run,a5
-    move.l   104(a5),d0
+    move.l   104(a5),d0  /* run->p_dreg[0] */
     bra      entusr
 #endif
     
