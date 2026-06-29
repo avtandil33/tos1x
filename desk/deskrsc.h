@@ -46,4 +46,7 @@
 #if (OS_COUNTRY == CTRY_CZ)
 #include "../desk/rsc/104/deskcz.h"
 #endif
+#if (OS_COUNTRY == CTRY_RU)
+#include "../desk/rsc/104/deskru.h"
+#endif
 #endif /* TOSVERSION == 0x104 */
