@@ -42,8 +42,6 @@ _zeromem equ BIOSTBASE+$20B8
 _zeromem equ BIOSTBASE+$1548
        xdef _memcpy
 _memcpy equ BIOSTBASE+2
-       xdef ringbell
-ringbell equ BIOSTBASE+4
 	   xdef _shifty
 _shifty equ $10bb
 

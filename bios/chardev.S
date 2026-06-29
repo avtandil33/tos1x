@@ -605,9 +605,9 @@ _bco2stat:
  * VT52 emulator callback for the bell sound
  *********************************************************/
 /* 104de: 00fc34e4 */
-#if !BINEXACT
+
 		xdef ringbell
-#endif
+
 ringbell:
         btst      #2,ABSW(_conterm)             /* console bell enabled? */
         beq.s     soundir8                      /* (no sound) */
@@ -3070,9 +3070,9 @@ soundir7:
 /* 206de: 00e037a4 */
 /* 104de: 00fc34e4 */
 /* 106de: 00e0454c */
-#if !BINEXACT
+
 		xdef ringbell
-#endif
+
 ringbell:
         btst      #2,ABSW(_conterm)             /* console bell enabled? */
         beq.s     soundir8                      /* (no sound) */

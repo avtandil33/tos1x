@@ -294,33 +294,7 @@ ctrl_tbl:
 
 do_bell: ds.b 0
 
-#if BINEXACT
-
-/*
- * With as68 we could use "bra.w ringbell",
- * but then aln (used in native compilations) gives a
- * 16-bit PC-relative overflow when linking the single
- * vdi.o
- */
-#if TOSVERSION == 0x104
-ringbell  equ $341E-(VDITBASE-BIOSTBASE)
-#endif
-
-#if TOSVERSION == 0x106
-ringbell  equ $442C+(BIOSTLEN-BTLEN_US)-(VDITBASE-BIOSTBASE)
-#endif
-
-#if TOSVERSION == 0x162
-ringbell  equ $442C+(BIOSTLEN-BTLEN_US)-(VDITBASE-BIOSTBASE)
-#endif
-
-	dc.w $6000,ringbell
-
-#else
-
-	jmp	ringbell			; need local variable in ctrl_tbl
-
-#endif
+	bra.w ringbell
 
 
 do_tab:
