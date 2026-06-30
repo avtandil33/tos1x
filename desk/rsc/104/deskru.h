@@ -1,32 +1,32 @@
 /*
- * resource set indices for deskus
+ * resource set indices for deskru
  *
  * created by ORCS 2.18
  */
 
 /*
- * Number of Strings:        238
+ * Number of Strings:        240
  * Number of Bitblks:        1
  * Number of Iconblks:       5
  * Number of Color Iconblks: 0
  * Number of Color Icons:    0
- * Number of Tedinfos:       30
+ * Number of Tedinfos:       31
  * Number of Free Strings:   37
  * Number of Free Images:    0
  * Number of Objects:        177
  * Number of Trees:          14
  * Number of Userblks:       0
  * Number of Images:         11
- * Total file size:          11240
+ * Total file size:          12248
  */
 
 #undef RSC_NAME
 #ifndef __ALCYON__
-#define RSC_NAME "deskus"
+#define RSC_NAME "deskru"
 #endif
 #undef RSC_ID
-#ifdef deskus
-#define RSC_ID deskus
+#ifdef deskru
+#define RSC_ID deskru
 #else
 #define RSC_ID 0
 #endif
@@ -35,7 +35,7 @@
 # define RSC_STATIC_FILE 0
 #endif
 #if !RSC_STATIC_FILE
-#define NUM_STRINGS 238
+#define NUM_STRINGS 240
 #define NUM_FRSTR 37
 #define NUM_UD 0
 #define NUM_IMAGES 11
@@ -43,7 +43,7 @@
 #define NUM_FRIMG 0
 #define NUM_IB 5
 #define NUM_CIB 0
-#define NUM_TI 30
+#define NUM_TI 31
 #define NUM_OBS 177
 #define NUM_TREE 14
 #endif
@@ -281,7 +281,7 @@
 #    define _WORD short
 #  endif
 #endif
-extern _WORD deskus_rsc_load(_WORD wchar, _WORD hchar);
-extern _WORD deskus_rsc_gaddr(_WORD type, _WORD idx, void *gaddr);
-extern _WORD deskus_rsc_free(void);
+extern _WORD deskru_rsc_load(_WORD wchar, _WORD hchar);
+extern _WORD deskru_rsc_gaddr(_WORD type, _WORD idx, void *gaddr);
+extern _WORD deskru_rsc_free(void);
 #endif
