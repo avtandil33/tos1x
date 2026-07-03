@@ -1039,7 +1039,11 @@ wrmappin:	dc.b	op0,op0,op3,op3		; replace mode
 
 
 /* easteregg alert... */
-blt_adj:	move.l	-(a0),d0
+blt_adj:	
+#if (OS_COUNTRY == CTRY_ES)
+		/* nothing to do */
+#else
+		move.l	-(a0),d0
 		neg.w	-(a1)
 		moveq.l	#$65,d3
 		movea.l	(a3),a0
@@ -1057,6 +1061,7 @@ blt_adj:	move.l	-(a0),d0
 		bsr.s	blt_adj+$7E
 		bge.s	blt_adj+$87
 		beq.s	blt_adj+$40
+#endif
 #endif
 		rts
 

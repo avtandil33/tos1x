@@ -1443,6 +1443,9 @@ blt_adj:
 	dc.b $a0
 	dc.b "di   "
 #else
+#if (OS_COUNTRY == CTRY_ES)
+	/* nothing to do */
+#else
 #if ((OS_COUNTRY == CTRY_UK) | (OS_COUNTRY == CTRY_SE)) & (TOSVERSION == 0x104)
 	dc.w 0
 #else
@@ -1463,6 +1466,7 @@ blt_adj:
 	bge	blt_adj+$87
 	beq	blt_adj+$40
 	/* should assemble to "Dave StaUgas loves Bea Hablig " */
+#endif	
 #endif
 	rts
 
