@@ -1040,7 +1040,7 @@ wrmappin:	dc.b	op0,op0,op3,op3		; replace mode
 
 /* easteregg alert... */
 blt_adj:	
-#if (OS_COUNTRY == CTRY_ES)
+#if (OS_COUNTRY == CTRY_RU)
 		/* nothing to do */
 #else
 		move.l	-(a0),d0
