@@ -110,6 +110,10 @@ int16_t const dat_8x8[1024] =
 #if OS_COUNTRY == CTRY_CZ
 #include "fonts/8x8/czech.c"
 #else
+#if OS_COUNTRY == CTRY_RU
+#include "fonts/8x8/cyrillic.c"
+#else
 #include "fonts/8x8/system.c"
+#endif
 #endif
 };

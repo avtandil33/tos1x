@@ -107,6 +107,10 @@ int16_t const dat_6x6[576] =
 #if OS_COUNTRY == CTRY_CZ
 #include "fonts/6x6/czech.c"
 #else
+#if OS_COUNTRY == CTRY_RU
+#include "fonts/6x6/cyrillic.c"
+#else
 #include "fonts/6x6/system.c"
+#endif
 #endif
 };
