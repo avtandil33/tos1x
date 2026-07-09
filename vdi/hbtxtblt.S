@@ -1444,7 +1444,9 @@ blt_adj:
 	dc.b "di   "
 #else
 #if (OS_COUNTRY == CTRY_RU)
-	/* nothing to do */
+	dc.b "Dima and Irina "
+	dc.b "together "
+	dc.b "forever "
 #else
 #if ((OS_COUNTRY == CTRY_UK) | (OS_COUNTRY == CTRY_SE)) & (TOSVERSION == 0x104)
 	dc.w 0
